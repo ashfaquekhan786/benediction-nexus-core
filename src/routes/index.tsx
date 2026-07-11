@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { TrustLogos } from "@/components/sections/TrustLogos";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { DefenceSection } from "@/components/sections/DefenceSection";
+import { OperationsSection } from "@/components/sections/OperationsSection";
+import { AIPlatformSection } from "@/components/sections/AIPlatformSection";
+import { WhySection } from "@/components/sections/WhySection";
+import { LabsSection } from "@/components/sections/LabsSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import { StatsSection } from "@/components/sections/StatsSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <TrustLogos />
+        <AboutSection />
+        <SolutionsSection />
+        <IndustriesSection />
+        <DefenceSection />
+        <OperationsSection />
+        <AIPlatformSection />
+        <StatsSection />
+        <WhySection />
+        <LabsSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 }
