@@ -88,10 +88,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Intelligent systems for cybersecurity, defence autonomy, and industrial operations — trusted by enterprises and governments.",
+          "Benediction protects enterprises, governments, and critical infrastructure with AI-driven cybersecurity, autonomous defence systems, and intelligent operations.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Benediction | AI-Powered Cybersecurity & Defence Technology" },
+      { name: "twitter:description", content: "Benediction protects enterprises, governments, and critical infrastructure with AI-driven cybersecurity, autonomous defence systems, and intelligent operations." },
     ],
     links: [
       {
