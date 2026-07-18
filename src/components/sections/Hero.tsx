@@ -137,30 +137,31 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, delay: 0.3 }}
-          className="relative hidden lg:block"
-          style={{ y: yCopy }}
-        >
-          <div className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-[120px]" />
-          <div className="glass-card overflow-hidden p-3">
-            <video
-              src={heroBg.url}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full rounded-[6px] [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]"
-            />
-          </div>
-          <div className="mt-6 flex items-center justify-between border-t border-foreground/10 pt-4 text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
-            <span>Benediction · Est. 1995</span>
-            <span className="text-accent">Global Operations</span>
-          </div>
+        <motion.div style={{ y: yCopy }} className="relative hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.4, delay: 0.3 }}
+          >
+            <div className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-[120px]" />
+            <div className="glass-card overflow-hidden p-3">
+              <video
+                src={heroBg.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full rounded-[6px] [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]"
+              />
+            </div>
+            <div className="mt-6 flex items-center justify-between border-t border-foreground/10 pt-4 text-[0.65rem] uppercase tracking-[0.28em] text-muted-foreground">
+              <span>Benediction · Est. 1995</span>
+              <span className="text-accent">Global Operations</span>
+            </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
   );
 }
+
