@@ -31,53 +31,54 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Playfair Display", "Times New Roman", serif;
   --font-sans: "Inter", sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  /* #05070B deep cyber black-navy */
-  --background: oklch(0.13 0.012 265);
-  --foreground: oklch(0.985 0.003 250);
+  /* Rolex-inspired obsidian black */
+  --background: oklch(0.09 0.004 260);
+  --foreground: oklch(0.97 0.005 90);
 
-  /* #0B1120 secondary panel navy */
-  --surface: oklch(0.18 0.03 262);
+  /* JLR panel graphite */
+  --surface: oklch(0.14 0.006 260);
 
-  --card: oklch(0.18 0.03 262);
-  --card-foreground: oklch(0.985 0.003 250);
-  --popover: oklch(0.17 0.028 262);
-  --popover-foreground: oklch(0.985 0.003 250);
+  --card: oklch(0.14 0.006 260);
+  --card-foreground: oklch(0.97 0.005 90);
+  --popover: oklch(0.12 0.005 260);
+  --popover-foreground: oklch(0.97 0.005 90);
 
-  /* Electric blue */
-  --primary: oklch(0.62 0.21 258);
-  --primary-foreground: oklch(0.985 0.003 250);
+  /* Platinum — used sparingly for buttons/rings */
+  --primary: oklch(0.86 0.02 85);
+  --primary-foreground: oklch(0.12 0.005 260);
 
-  --secondary: oklch(0.24 0.04 262);
-  --secondary-foreground: oklch(0.985 0.003 250);
+  --secondary: oklch(0.18 0.006 260);
+  --secondary-foreground: oklch(0.97 0.005 90);
 
-  --muted: oklch(0.22 0.03 262);
-  --muted-foreground: oklch(0.72 0.02 255);
+  --muted: oklch(0.18 0.006 260);
+  --muted-foreground: oklch(0.72 0.012 90);
 
-  /* Neon cyan */
-  --accent: oklch(0.83 0.14 200);
-  --accent-foreground: oklch(0.15 0.02 262);
+  /* Champagne gold — signature accent */
+  --accent: oklch(0.82 0.11 85);
+  --accent-foreground: oklch(0.12 0.005 260);
 
-  /* Purple glow */
-  --glow: oklch(0.62 0.22 295);
+  /* Warm brass highlight */
+  --glow: oklch(0.72 0.13 70);
 
   --destructive: oklch(0.6 0.23 25);
-  --destructive-foreground: oklch(0.985 0.003 250);
+  --destructive-foreground: oklch(0.97 0.005 90);
 
-  --border: oklch(0.62 0.21 258 / 18%);
-  --input: oklch(0.62 0.21 258 / 22%);
-  --ring: oklch(0.62 0.21 258);
+  --border: oklch(0.82 0.11 85 / 14%);
+  --input: oklch(0.82 0.11 85 / 20%);
+  --ring: oklch(0.82 0.11 85);
 
-  --gradient-cyber: linear-gradient(135deg, var(--primary), var(--accent));
-  --gradient-glow: linear-gradient(135deg, var(--primary), var(--glow));
-  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--primary) 45%, transparent);
-  --shadow-glow-cyan: 0 0 50px -10px color-mix(in oklab, var(--accent) 40%, transparent);
+  --gradient-cyber: linear-gradient(135deg, var(--accent), var(--glow));
+  --gradient-glow: linear-gradient(120deg, oklch(0.9 0.06 85), var(--accent), var(--glow));
+  --shadow-glow: 0 24px 60px -20px color-mix(in oklab, var(--accent) 30%, transparent);
+  --shadow-glow-cyan: 0 30px 80px -24px color-mix(in oklab, var(--glow) 35%, transparent);
+  --shadow-elevated: 0 40px 120px -40px oklch(0 0 0 / 70%);
 }
 
 @layer base {
@@ -93,87 +94,101 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
+    font-weight: 500;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--primary) 40%, transparent);
+    background: color-mix(in oklab, var(--accent) 45%, transparent);
+    color: var(--accent-foreground);
   }
 }
 
-/* Glassmorphism card */
+/* Glassmorphism card — luxury refinement */
 @utility glass-card {
-  background: color-mix(in oklab, var(--surface) 55%, transparent);
-  backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--surface) 70%, transparent),
+    color-mix(in oklab, var(--background) 80%, transparent)
+  );
+  backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--accent) 16%, transparent);
   border-radius: var(--radius-xl);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--accent) 12%, transparent),
+    0 30px 80px -40px oklch(0 0 0 / 80%);
 }
 
 /* Glowing border on hover */
 @utility glow-hover {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
   &:hover {
-    border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+    border-color: color-mix(in oklab, var(--accent) 45%, transparent);
     box-shadow: var(--shadow-glow);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 }
 
-/* Gradient text */
+/* Gradient text — champagne gold */
 @utility text-gradient {
-  background: var(--gradient-cyber);
+  background: linear-gradient(120deg, oklch(0.94 0.04 90), var(--accent), var(--glow));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility text-gradient-glow {
-  background: linear-gradient(120deg, var(--accent), var(--primary), var(--glow));
+  background: linear-gradient(120deg, oklch(0.96 0.03 90), var(--accent) 55%, var(--glow));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Cyber grid background */
+/* Cyber grid → hairline luxury grid */
 @utility cyber-grid {
   background-image:
-    linear-gradient(color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(color-mix(in oklab, var(--accent) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--accent) 5%, transparent) 1px, transparent 1px);
+  background-size: 88px 88px;
 }
 
-/* Section eyebrow label */
+/* Section eyebrow — Rolex-style small caps label */
 @utility eyebrow {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-/* Buttons */
+/* Buttons — refined, minimal, gold hairline */
 @utility btn-hero {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.9rem;
-  border-radius: 9999px;
-  background: var(--gradient-cyber);
-  color: var(--primary-foreground);
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  border-radius: 2px;
+  background: linear-gradient(180deg, oklch(0.9 0.05 88), var(--accent));
+  color: var(--accent-foreground);
+  border: 1px solid color-mix(in oklab, var(--accent) 55%, transparent);
   box-shadow: var(--shadow-glow);
-  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, filter 0.4s ease;
   &:hover {
-    filter: brightness(1.12);
+    filter: brightness(1.08);
     box-shadow: var(--shadow-glow-cyan);
     transform: translateY(-2px);
   }
@@ -183,28 +198,42 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.9rem;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in oklab, var(--primary) 45%, transparent);
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  border-radius: 2px;
+  border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
   color: var(--foreground);
-  background: color-mix(in oklab, var(--surface) 40%, transparent);
+  background: color-mix(in oklab, var(--surface) 30%, transparent);
   backdrop-filter: blur(10px);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.4s ease, color 0.4s ease, background 0.4s ease;
   &:hover {
     border-color: var(--accent);
-    box-shadow: var(--shadow-glow-cyan);
-    transform: translateY(-2px);
+    color: var(--accent);
+    background: color-mix(in oklab, var(--accent) 8%, transparent);
   }
 }
 
-/* Glow orb decoration */
+/* Glow orb decoration — warmer, softer */
 @utility glow-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(120px);
+  filter: blur(140px);
   pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Fine gold hairline divider (Rolex signature) */
+@utility gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--accent) 60%, transparent),
+    transparent
+  );
 }
