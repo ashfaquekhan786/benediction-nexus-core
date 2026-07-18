@@ -35,12 +35,12 @@ export function Navbar() {
         scrolled ? "border-b border-border bg-background/70 backdrop-blur-xl" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent shadow-[var(--shadow-glow)]">
-            <span className="font-display text-sm font-bold text-primary-foreground">B</span>
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main">
+        <Link to="/" className="flex items-center gap-3">
+          <span className="relative flex h-9 w-9 items-center justify-center border border-accent/60 bg-background">
+            <span className="font-display text-base italic text-accent">B</span>
           </span>
-          <span className="font-display text-lg font-700 font-bold tracking-tight">
+          <span className="font-display text-lg font-medium tracking-[0.28em]">
             BENEDICTION
           </span>
         </Link>
@@ -50,17 +50,18 @@ export function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+              className={`px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] transition-colors ${
                 pathname === l.to ? "text-accent" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn-hero ml-3 !px-5 !py-2.5 !text-sm">
+          <Link to="/contact" className="btn-hero ml-4 !px-6 !py-2.5 !text-[0.65rem]">
             Request Demo
           </Link>
         </div>
+
 
         <button
           className="rounded-md p-2 text-foreground lg:hidden"

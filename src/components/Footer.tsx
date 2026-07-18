@@ -11,12 +11,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-                <span className="font-display text-sm font-bold text-primary-foreground">B</span>
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center border border-accent/60">
+                <span className="font-display text-base italic text-accent">B</span>
               </span>
-              <span className="font-display text-lg font-bold tracking-tight">BENEDICTION</span>
+              <span className="font-display text-lg font-medium tracking-[0.28em]">BENEDICTION</span>
             </div>
+
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Intelligent systems for cybersecurity, defence autonomy, and industrial operations.
               Protecting enterprises, governments, and critical infrastructure worldwide.
