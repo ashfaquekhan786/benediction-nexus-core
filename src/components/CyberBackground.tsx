@@ -51,19 +51,19 @@ export function CyberBackground({ className = "" }: { className?: string }) {
         }
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.4, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(96, 165, 250, 0.55)";
+        ctx.arc(p.x, p.y, 1.1, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(212, 175, 110, 0.38)";
         ctx.fill();
       }
       for (let i = 0; i < pts.length; i++) {
         for (let j = i + 1; j < pts.length; j++) {
           const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
-          if (d < 130) {
+          if (d < 140) {
             ctx.beginPath();
             ctx.moveTo(pts[i].x, pts[i].y);
             ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - d / 130) * 0.18})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(212, 175, 110, ${(1 - d / 140) * 0.1})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
