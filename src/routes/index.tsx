@@ -16,6 +16,7 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ParallaxSection } from "@/components/ParallaxSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -28,15 +29,15 @@ function Index() {
       <main>
         <Hero />
         <TrustLogos />
-        <AboutSection />
+        <ParallaxSection offset={40}><AboutSection /></ParallaxSection>
         <SolutionsSection />
-        <IndustriesSection />
+        <ParallaxSection offset={50}><IndustriesSection /></ParallaxSection>
         <DefenceSection />
-        <OperationsSection />
+        <ParallaxSection offset={50}><OperationsSection /></ParallaxSection>
         <AIPlatformSection />
         <StatsSection />
         <WhySection />
-        <LabsSection />
+        <ParallaxSection offset={40}><LabsSection /></ParallaxSection>
         <ProcessSection />
         <TestimonialsSection />
         <FAQSection />
@@ -46,3 +47,4 @@ function Index() {
     </div>
   );
 }
+
