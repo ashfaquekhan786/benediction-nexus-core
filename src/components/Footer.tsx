@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Linkedin } from "lucide-react";
+import logoMark from "@/assets/benediction-mark.png";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -12,9 +13,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center border border-accent/60">
-                <span className="font-display text-base italic text-accent">B</span>
-              </span>
+              <img src={logoMark} alt="Benediction" className="h-11 w-auto object-contain" />
               <span className="font-display text-lg font-medium tracking-[0.28em]">BENEDICTION</span>
             </div>
 

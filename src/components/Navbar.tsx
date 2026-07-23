@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoMark from "@/assets/benediction-mark.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -37,9 +38,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main">
         <Link to="/" className="flex items-center gap-3">
-          <span className="relative flex h-9 w-9 items-center justify-center border border-accent/60 bg-background">
-            <span className="font-display text-base italic text-accent">B</span>
-          </span>
+          <img src={logoMark} alt="Benediction" className="h-11 w-auto object-contain" />
           <span className="font-display text-lg font-medium tracking-[0.28em]">
             BENEDICTION
           </span>
