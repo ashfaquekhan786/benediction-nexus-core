@@ -5,6 +5,8 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustLogos } from "@/components/sections/TrustLogos";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { OfferingsSection } from "@/components/sections/OfferingsSection";
+import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { DefenceSection } from "@/components/sections/DefenceSection";
 import { OperationsSection } from "@/components/sections/OperationsSection";
@@ -30,8 +32,10 @@ function Index() {
         <Hero />
         <TrustLogos />
         <ParallaxSection offset={40}><AboutSection /></ParallaxSection>
+        <OfferingsSection />
         <SolutionsSection />
         <ParallaxSection offset={50}><IndustriesSection /></ParallaxSection>
+        <BrandsMarquee />
         <DefenceSection />
         <ParallaxSection offset={50}><OperationsSection /></ParallaxSection>
         <AIPlatformSection />

@@ -1,19 +1,14 @@
 import { motion } from "framer-motion";
-import {
-  HeartPulse, Zap, Factory, Landmark, ShoppingBag, Ship, Building, ServerCog, Headset,
-} from "lucide-react";
+import { Fuel, Zap, Factory, TrainFront, HeartPulse, Radio } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const industries = [
-  { icon: HeartPulse, title: "Healthcare", body: "Protect patient data and keep clinical systems online." },
-  { icon: Zap, title: "Energy", body: "Secure OT systems and critical infrastructure." },
-  { icon: Factory, title: "Manufacturing", body: "Defend OT, IT, IIoT, and supply chain at scale." },
-  { icon: Landmark, title: "Financial Services", body: "Prevent fraud and ransomware while staying audit-ready." },
-  { icon: ShoppingBag, title: "Retail & Hospitality", body: "Defend your brand, customer data, and bottom line." },
-  { icon: Ship, title: "Transportation & Logistics", body: "Defend operations across fleet, port, and rail." },
-  { icon: Building, title: "Government", body: "Advanced deployments across Army, Air Force, Navy, and NSG." },
-  { icon: ServerCog, title: "Critical Infrastructure", body: "Expertise in securing critical infrastructure globally." },
-  { icon: Headset, title: "Managed Services", body: "Threat hunting, MDR, and incident readiness & response." },
+  { icon: Fuel, title: "Petroleum & Natural Gas", body: "Securing upstream, midstream, and downstream operations — refineries, pipelines, and city gas distribution networks." },
+  { icon: Zap, title: "Power & Energies", body: "Protecting generation, transmission, and distribution — thermal, hydro, renewables, and grid operators." },
+  { icon: Factory, title: "Manufacturing", body: "Automotive, marine, aerospace and heavy engineering — IT, OT, IIoT, and supply-chain defence at scale." },
+  { icon: TrainFront, title: "Railways", body: "Signalling, rolling stock, high-speed corridors, and station infrastructure — safety-critical rail cybersecurity." },
+  { icon: HeartPulse, title: "Healthcare", body: "Hospitals, medical devices, and health-cloud workloads — patient data protection and clinical uptime." },
+  { icon: Radio, title: "Telecom", body: "Core networks, 5G, data centres, and subscriber platforms — carrier-grade security operations." },
 ];
 
 export function IndustriesSection() {
@@ -31,6 +26,7 @@ export function IndustriesSection() {
         />
 
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {/* 6 sectors Benediction caters to */}
           {industries.map((ind, i) => (
             <motion.article
               key={ind.title}
