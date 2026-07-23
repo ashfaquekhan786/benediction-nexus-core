@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
+import { DefenceAgencies } from "@/components/sections/DefenceAgencies";
+import { HospitalsSection } from "@/components/sections/HospitalsSection";
 import { TrustLogos } from "@/components/sections/TrustLogos";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
@@ -34,7 +36,9 @@ function IndustriesPage() {
           description="AI-powered cybersecurity built to secure what's next — Benediction is trusted by the world's best."
         />
         <IndustriesSection />
-        <BrandsMarquee />
+        <DefenceAgencies />
+        <BrandsMarquee heading={false} />
+        <HospitalsSection />
         <TrustLogos />
         <TestimonialsSection />
       </main>
