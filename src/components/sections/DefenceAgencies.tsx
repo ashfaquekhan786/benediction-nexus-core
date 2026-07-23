@@ -1,5 +1,47 @@
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
+import { LogosMarquee, type LogoBrand } from "@/components/sections/LogosMarquee";
+
+const agencyLogos: LogoBrand[] = [
+  { name: "Indian Army", domain: "indianarmy.nic.in" },
+  { name: "Indian Air Force", domain: "indianairforce.nic.in" },
+  { name: "Indian Navy", domain: "indiannavy.nic.in" },
+  { name: "Indian Coast Guard", domain: "indiancoastguard.gov.in" },
+  { name: "National Security Guards", domain: "nsg.gov.in" },
+  { name: "ADE", domain: "drdo.gov.in" },
+  { name: "ARDE", domain: "drdo.gov.in" },
+  { name: "CVRDE", domain: "drdo.gov.in" },
+  { name: "DEBEL", domain: "drdo.gov.in" },
+  { name: "DEAL", domain: "drdo.gov.in" },
+  { name: "HAL", domain: "hal-india.co.in" },
+  { name: "BEL", domain: "bel-india.in" },
+  { name: "MDL", domain: "mazagondock.in" },
+  { name: "BDL", domain: "bdl-india.in" },
+  { name: "GRSE", domain: "grse.in" },
+  { name: "BEML", domain: "bemlindia.in" },
+  { name: "AVNL", domain: "avnl.co.in" },
+  { name: "Assam Rifles", domain: "assamrifles.gov.in" },
+  { name: "BSF", domain: "bsf.gov.in" },
+  { name: "CISF", domain: "cisf.gov.in" },
+  { name: "CRPF", domain: "crpf.gov.in" },
+  { name: "ITBP", domain: "itbpolice.nic.in" },
+  { name: "SSB", domain: "ssb.nic.in" },
+  { name: "DFSS", domain: "dfs.gov.in" },
+  { name: "RRU", domain: "rru.ac.in" },
+  { name: "NCDC", domain: "ncdcindia.gov.in" },
+  { name: "Intelligence Bureau", domain: "mha.gov.in" },
+  { name: "NIA", domain: "nia.gov.in" },
+  { name: "NCB", domain: "narcoticsindia.nic.in" },
+  { name: "DRDO", domain: "drdo.gov.in" },
+  { name: "Mumbai Police", domain: "mumbaipolice.gov.in" },
+  { name: "Delhi Police", domain: "delhipolice.gov.in" },
+  { name: "Bangalore Police", domain: "bcp.karnataka.gov.in" },
+  { name: "Kolkata Police", domain: "kolkatapolice.gov.in" },
+  { name: "Hyderabad Police", domain: "hyderabadpolice.gov.in" },
+  { name: "UP Police", domain: "uppolice.gov.in" },
+  { name: "Central Forensic Labs", domain: "cfslkolkata.gov.in" },
+];
+
 
 const agencies = [
   "Indian Army",
