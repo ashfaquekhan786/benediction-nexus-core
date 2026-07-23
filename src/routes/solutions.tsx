@@ -3,6 +3,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
+import { OfferingsSection } from "@/components/sections/OfferingsSection";
+import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
 import { AIPlatformSection } from "@/components/sections/AIPlatformSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
@@ -33,7 +35,9 @@ function SolutionsPage() {
           title="The Benediction Platform"
           description="A holistic, platformized cybersecurity solution — comprehensive protection across devices, applications, networks, cloud, data, and identity."
         />
+        <OfferingsSection />
         <SolutionsSection full />
+        <BrandsMarquee />
         <AIPlatformSection />
         <StatsSection />
         <FAQSection />
