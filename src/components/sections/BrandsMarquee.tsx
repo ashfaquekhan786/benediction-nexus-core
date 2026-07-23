@@ -100,7 +100,7 @@ export function BrandsMarquee({
                 Powering India&apos;s <span className="text-gradient">Critical Enterprises</span>
               </>
             }
-            description="Benediction is trusted by leading names across petroleum, power, transport, and infrastructure."
+            description="Benediction is trusted by leading names across Petroleum, Power, Energy Utilities, Manufacturing, Supply Chain Management, Transport, and Infrastructure."
           />
         )}
       </div>
