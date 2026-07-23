@@ -135,6 +135,11 @@ export function DefenceAgencies() {
           ))}
         </motion.ul>
       </div>
+
+      <div className="mx-auto mt-14 max-w-[100vw]">
+        <LogosMarquee brands={agencyLogos} />
+      </div>
     </section>
   );
 }
+
