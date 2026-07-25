@@ -103,8 +103,7 @@ export function DefenceAgencies() {
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
               Benediction is committed to the growth and progress of our motherland India and its
-              global allies — the United States of America, Israel, United Kingdom, Europe,
-              Australia, and other trusted allies of Mother India.
+              trusted allies.
             </p>
             <p>
               Benediction is trusted by industry verticals such as Petroleum, Power, Energy and

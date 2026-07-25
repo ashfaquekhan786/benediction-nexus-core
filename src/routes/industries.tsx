@@ -6,8 +6,9 @@ import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
 import { DefenceAgencies } from "@/components/sections/DefenceAgencies";
 import { HospitalsSection } from "@/components/sections/HospitalsSection";
+import { HealthcareRobotics } from "@/components/sections/HealthcareRobotics";
 import { TrustLogos } from "@/components/sections/TrustLogos";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { IndustriesTestimonials } from "@/components/sections/IndustriesTestimonials";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -38,9 +39,10 @@ function IndustriesPage() {
         <IndustriesSection />
         <DefenceAgencies />
         <BrandsMarquee heading={false} />
+        <HealthcareRobotics />
         <HospitalsSection />
         <TrustLogos />
-        <TestimonialsSection />
+        <IndustriesTestimonials />
       </main>
       <Footer />
     </div>
