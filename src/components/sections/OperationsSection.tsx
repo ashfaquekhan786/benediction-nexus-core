@@ -101,11 +101,12 @@ export function OperationsSection({ full = false }: { full?: boolean }) {
 
         {!full && (
           <div className="mt-10 text-center">
-            <Link to="/operations" className="btn-ghost-glow">
-              Explore Operations Platform <ArrowRight className="h-4 w-4" />
+            <Link to="/solutions" className="btn-ghost-glow">
+              Explore Solutions <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         )}
+
       </div>
     </section>
   );

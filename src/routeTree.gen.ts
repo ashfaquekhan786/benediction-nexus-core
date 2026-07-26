@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as OperationsRouteImport } from './routes/operations'
+import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as DefenceRouteImport } from './routes/defence'
+import { Route as CybersecurityRouteImport } from './routes/cybersecurity'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConsultingRouteImport } from './routes/consulting'
+import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -28,9 +30,9 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OperationsRoute = OperationsRouteImport.update({
-  id: '/operations',
-  path: '/operations',
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -38,14 +40,24 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DefenceRoute = DefenceRouteImport.update({
-  id: '/defence',
-  path: '/defence',
+const CybersecurityRoute = CybersecurityRouteImport.update({
+  id: '/cybersecurity',
+  path: '/cybersecurity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultingRoute = ConsultingRouteImport.update({
+  id: '/consulting',
+  path: '/consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationsRoute = ApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -62,20 +74,24 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
+  '/cybersecurity': typeof CybersecurityRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
+  '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
+  '/cybersecurity': typeof CybersecurityRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
+  '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -83,10 +99,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/applications': typeof ApplicationsRoute
+  '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
+  '/cybersecurity': typeof CybersecurityRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
+  '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -95,30 +113,36 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/applications'
+    | '/consulting'
     | '/contact'
-    | '/defence'
+    | '/cybersecurity'
     | '/industries'
-    | '/operations'
+    | '/leadership'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/applications'
+    | '/consulting'
     | '/contact'
-    | '/defence'
+    | '/cybersecurity'
     | '/industries'
-    | '/operations'
+    | '/leadership'
     | '/sitemap.xml'
     | '/solutions'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/applications'
+    | '/consulting'
     | '/contact'
-    | '/defence'
+    | '/cybersecurity'
     | '/industries'
-    | '/operations'
+    | '/leadership'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesById: FileRoutesById
@@ -126,10 +150,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ApplicationsRoute: typeof ApplicationsRoute
+  ConsultingRoute: typeof ConsultingRoute
   ContactRoute: typeof ContactRoute
-  DefenceRoute: typeof DefenceRoute
+  CybersecurityRoute: typeof CybersecurityRoute
   IndustriesRoute: typeof IndustriesRoute
-  OperationsRoute: typeof OperationsRoute
+  LeadershipRoute: typeof LeadershipRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
 }
@@ -150,11 +176,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/operations': {
-      id: '/operations'
-      path: '/operations'
-      fullPath: '/operations'
-      preLoaderRoute: typeof OperationsRouteImport
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -164,11 +190,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/defence': {
-      id: '/defence'
-      path: '/defence'
-      fullPath: '/defence'
-      preLoaderRoute: typeof DefenceRouteImport
+    '/cybersecurity': {
+      id: '/cybersecurity'
+      path: '/cybersecurity'
+      fullPath: '/cybersecurity'
+      preLoaderRoute: typeof CybersecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -176,6 +202,20 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consulting': {
+      id: '/consulting'
+      path: '/consulting'
+      fullPath: '/consulting'
+      preLoaderRoute: typeof ConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/applications': {
+      id: '/applications'
+      path: '/applications'
+      fullPath: '/applications'
+      preLoaderRoute: typeof ApplicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -198,10 +238,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ApplicationsRoute: ApplicationsRoute,
+  ConsultingRoute: ConsultingRoute,
   ContactRoute: ContactRoute,
-  DefenceRoute: DefenceRoute,
+  CybersecurityRoute: CybersecurityRoute,
   IndustriesRoute: IndustriesRoute,
-  OperationsRoute: OperationsRoute,
+  LeadershipRoute: LeadershipRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
 }
