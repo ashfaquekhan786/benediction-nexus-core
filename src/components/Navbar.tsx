@@ -1,15 +1,29 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logoMark from "@/assets/benediction-mark.png";
 
-const links = [
+type NavLink = {
+  to: string;
+  label: string;
+  children?: { to: string; label: string; description?: string }[];
+};
+
+const links: NavLink[] = [
   { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solutions" },
+  {
+    to: "/solutions",
+    label: "Solutions",
+    children: [
+      { to: "/solutions", label: "Solutions", description: "The Benediction platform overview" },
+      { to: "/cybersecurity", label: "Cybersecurity", description: "AI red teaming, GRC, SecOps" },
+      { to: "/consulting", label: "Consulting", description: "Strategy, risk & advisory" },
+      { to: "/applications", label: "Applications", description: "Enterprise apps & platforms" },
+    ],
+  },
   { to: "/industries", label: "Industries" },
-  { to: "/defence", label: "Defence" },
-  { to: "/operations", label: "Operations" },
+  { to: "/leadership", label: "Leadership" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];

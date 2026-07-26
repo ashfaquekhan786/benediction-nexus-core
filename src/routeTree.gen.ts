@@ -11,9 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as OperationsRouteImport } from './routes/operations'
 import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as DefenceRouteImport } from './routes/defence'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -28,19 +26,9 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OperationsRoute = OperationsRouteImport.update({
-  id: '/operations',
-  path: '/operations',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DefenceRoute = DefenceRouteImport.update({
-  id: '/defence',
-  path: '/defence',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -63,9 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -73,9 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -84,9 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/defence': typeof DefenceRoute
   '/industries': typeof IndustriesRoute
-  '/operations': typeof OperationsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -96,9 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/defence'
     | '/industries'
-    | '/operations'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesByTo: FileRoutesByTo
@@ -106,9 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/defence'
     | '/industries'
-    | '/operations'
     | '/sitemap.xml'
     | '/solutions'
   id:
@@ -116,9 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/defence'
     | '/industries'
-    | '/operations'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesById: FileRoutesById
@@ -127,9 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  DefenceRoute: typeof DefenceRoute
   IndustriesRoute: typeof IndustriesRoute
-  OperationsRoute: typeof OperationsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
 }
@@ -150,25 +124,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/operations': {
-      id: '/operations'
-      path: '/operations'
-      fullPath: '/operations'
-      preLoaderRoute: typeof OperationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/industries': {
       id: '/industries'
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/defence': {
-      id: '/defence'
-      path: '/defence'
-      fullPath: '/defence'
-      preLoaderRoute: typeof DefenceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -199,9 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  DefenceRoute: DefenceRoute,
   IndustriesRoute: IndustriesRoute,
-  OperationsRoute: OperationsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
 }
