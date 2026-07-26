@@ -59,21 +59,66 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] transition-colors ${
-                pathname === l.to ? "text-accent" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active =
+              pathname === l.to ||
+              (l.children && l.children.some((c) => c.to === pathname));
+            if (l.children) {
+              return (
+                <div key={l.to} className="group relative">
+                  <Link
+                    to={l.to}
+                    className={`inline-flex items-center gap-1 px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] transition-colors ${
+                      active ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {l.label}
+                    <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+                  </Link>
+                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+                    <div className="rounded-2xl border border-border bg-background/95 p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl">
+                      {l.children.map((c) => (
+                        <Link
+                          key={c.to}
+                          to={c.to}
+                          className={`block rounded-xl px-4 py-3 transition-colors ${
+                            pathname === c.to
+                              ? "bg-secondary text-accent"
+                              : "text-foreground/85 hover:bg-secondary hover:text-accent"
+                          }`}
+                        >
+                          <div className="font-display text-[0.8rem] font-semibold tracking-wide">
+                            {c.label}
+                          </div>
+                          {c.description && (
+                            <div className="mt-0.5 text-xs text-muted-foreground">
+                              {c.description}
+                            </div>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.22em] transition-colors ${
+                  active ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           <Link to="/contact" className="btn-hero ml-4 !px-6 !py-2.5 !text-[0.65rem]">
             Request Demo
           </Link>
         </div>
+
 
 
         <button
@@ -96,16 +141,37 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-1 px-4 py-4">
               {links.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
-                    pathname === l.to ? "bg-secondary text-accent" : "text-muted-foreground"
-                  }`}
-                >
-                  {l.label}
-                </Link>
+                <div key={l.to}>
+                  <Link
+                    to={l.to}
+                    className={`block rounded-lg px-3 py-2.5 text-sm font-medium ${
+                      pathname === l.to ? "bg-secondary text-accent" : "text-muted-foreground"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                  {l.children && (
+                    <div className="ml-3 mt-1 flex flex-col gap-1 border-l border-border pl-3">
+                      {l.children
+                        .filter((c) => c.to !== l.to)
+                        .map((c) => (
+                          <Link
+                            key={c.to}
+                            to={c.to}
+                            className={`rounded-md px-2 py-1.5 text-xs ${
+                              pathname === c.to
+                                ? "text-accent"
+                                : "text-muted-foreground hover:text-foreground"
+                            }`}
+                          >
+                            {c.label}
+                          </Link>
+                        ))}
+                    </div>
+                  )}
+                </div>
               ))}
+
               <Link to="/contact" className="btn-hero mt-2 justify-center !text-sm">
                 Request Demo
               </Link>

@@ -45,12 +45,13 @@ export function Footer() {
           <nav aria-label="Platforms">
             <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">Platforms</h3>
             <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
-              <li><Link to="/defence" className="transition-colors hover:text-accent">Defence</Link></li>
-              <li><Link to="/operations" className="transition-colors hover:text-accent">Operations</Link></li>
-              <li><span className="cursor-default">Privacy Policy</span></li>
-              <li><span className="cursor-default">Terms &amp; Conditions</span></li>
+              <li><Link to="/cybersecurity" className="transition-colors hover:text-accent">Cybersecurity</Link></li>
+              <li><Link to="/consulting" className="transition-colors hover:text-accent">Consulting</Link></li>
+              <li><Link to="/applications" className="transition-colors hover:text-accent">Applications</Link></li>
+              <li><Link to="/leadership" className="transition-colors hover:text-accent">Leadership</Link></li>
             </ul>
           </nav>
+
 
           <div>
             <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">Newsletter</h3>
