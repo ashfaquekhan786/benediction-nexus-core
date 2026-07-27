@@ -39,7 +39,7 @@ export function ContactSection() {
                     <UserRound className="h-4.5 w-4.5" />
                   </span>
                   <div>
-                    <p className="font-medium">Mr. Sumer Biswas</p>
+                    <p className="font-medium">Rumeli Biswas</p>
                     <p className="text-xs text-muted-foreground">Business Director</p>
                   </div>
                 </li>
