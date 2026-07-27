@@ -13,6 +13,8 @@ import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as HealthcareRouteImport } from './routes/healthcare'
+import { Route as DefenceHomelandSecurityRouteImport } from './routes/defence-homeland-security'
 import { Route as CybersecurityRouteImport } from './routes/cybersecurity'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConsultingRouteImport } from './routes/consulting'
@@ -38,6 +40,16 @@ const LeadershipRoute = LeadershipRouteImport.update({
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthcareRoute = HealthcareRouteImport.update({
+  id: '/healthcare',
+  path: '/healthcare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DefenceHomelandSecurityRoute = DefenceHomelandSecurityRouteImport.update({
+  id: '/defence-homeland-security',
+  path: '/defence-homeland-security',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CybersecurityRoute = CybersecurityRouteImport.update({
@@ -78,6 +90,8 @@ export interface FileRoutesByFullPath {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -90,6 +104,8 @@ export interface FileRoutesByTo {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -103,6 +119,8 @@ export interface FileRoutesById {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -117,6 +135,8 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
     | '/sitemap.xml'
@@ -129,6 +149,8 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
     | '/sitemap.xml'
@@ -141,6 +163,8 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
     | '/sitemap.xml'
@@ -154,6 +178,8 @@ export interface RootRouteChildren {
   ConsultingRoute: typeof ConsultingRoute
   ContactRoute: typeof ContactRoute
   CybersecurityRoute: typeof CybersecurityRoute
+  DefenceHomelandSecurityRoute: typeof DefenceHomelandSecurityRoute
+  HealthcareRoute: typeof HealthcareRoute
   IndustriesRoute: typeof IndustriesRoute
   LeadershipRoute: typeof LeadershipRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -188,6 +214,20 @@ declare module '@tanstack/react-router' {
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/healthcare': {
+      id: '/healthcare'
+      path: '/healthcare'
+      fullPath: '/healthcare'
+      preLoaderRoute: typeof HealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/defence-homeland-security': {
+      id: '/defence-homeland-security'
+      path: '/defence-homeland-security'
+      fullPath: '/defence-homeland-security'
+      preLoaderRoute: typeof DefenceHomelandSecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cybersecurity': {
@@ -242,6 +282,8 @@ const rootRouteChildren: RootRouteChildren = {
   ConsultingRoute: ConsultingRoute,
   ContactRoute: ContactRoute,
   CybersecurityRoute: CybersecurityRoute,
+  DefenceHomelandSecurityRoute: DefenceHomelandSecurityRoute,
+  HealthcareRoute: HealthcareRoute,
   IndustriesRoute: IndustriesRoute,
   LeadershipRoute: LeadershipRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
