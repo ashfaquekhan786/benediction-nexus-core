@@ -107,6 +107,27 @@ export function OfferingsSection() {
                   ))}
                 </div>
               )}
+
+              {o.title === "Special Projects" && (
+                <div className="mt-6 space-y-3 border-t border-border/70 pt-6">
+                  <p className="eyebrow">Use Cases</p>
+                  {liveEoUseCases.map((p) => (
+                    <a
+                      key={p.name}
+                      href={p.href}
+                      download={p.file}
+                      className="flex items-start gap-3 rounded-xl border border-border bg-surface/50 p-4 backdrop-blur-md transition-colors hover:border-accent/60"
+                    >
+                      <Download className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      <span>
+                        <span className="block font-display text-sm font-semibold">{p.name}</span>
+                        <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">{p.body}</span>
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
             </motion.article>
           ))}
         </div>
