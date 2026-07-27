@@ -55,11 +55,20 @@ function LeadershipPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Our leadership profiles are being curated. Please check back shortly to meet the team
-              guiding Benediction&rsquo;s mission across cybersecurity, healthcare, and frontier
-              engineering.
+              Our leadership team drives growth and innovation through brilliant domain experts,
+              highly experienced, successful professionals with very highly qualified backgrounds
+              from globally recognized institutions across the world.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            >
+              The combined experience of our leadership team is around{" "}
+              <span className="font-display font-semibold text-accent">500 plus years</span>.
             </motion.p>
           </div>
         </section>
