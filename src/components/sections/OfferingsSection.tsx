@@ -1,6 +1,23 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, HeartPulse, Satellite, Sparkles } from "lucide-react";
+import { ShieldCheck, HeartPulse, Satellite, Sparkles, Download } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import surfaceScoutPdf from "@/assets/liveeo/surfacescout.pdf.asset.json";
+import treelinePdf from "@/assets/liveeo/treeline.pdf.asset.json";
+
+const liveEoProducts = [
+  {
+    name: "SurfaceScout",
+    href: surfaceScoutPdf.url,
+    file: "LiveEO-SurfaceScout-Pipeline-Monitoring-2026.pdf",
+    body: "Satellite-based pipeline monitoring — ground movement and third-party interference detection across entire pipeline networks.",
+  },
+  {
+    name: "Treeline",
+    href: treelinePdf.url,
+    file: "LiveEO-Treeline-Solution.pdf",
+    body: "Satellite-driven vegetation management for transmission corridors — encroachment risk scoring and prioritised trimming plans.",
+  },
+];
 
 const offerings = [
   {
