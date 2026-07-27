@@ -64,7 +64,7 @@ export function ContactSection() {
                     <Linkedin className="h-4.5 w-4.5" />
                   </span>
                   <a
-                    href="https://www.linkedin.com/in/sumer-biswas-7a923ba7/"
+                    href="https://www.linkedin.com/in/rumeli-biswas-871477286/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="transition-colors hover:text-accent"
