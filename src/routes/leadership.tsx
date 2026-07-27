@@ -43,14 +43,6 @@ function LeadershipPage() {
             >
               Leadership
             </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl"
-            >
-              This page is <span className="text-gradient">under development</span>
-            </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
