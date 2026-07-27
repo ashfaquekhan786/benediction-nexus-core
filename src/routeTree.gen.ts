@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PowerEnergyRouteImport } from './routes/power-energy'
+import { Route as PetroleumNaturalGasRouteImport } from './routes/petroleum-natural-gas'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as HealthcareRouteImport } from './routes/healthcare'
@@ -30,6 +32,16 @@ const SolutionsRoute = SolutionsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PowerEnergyRoute = PowerEnergyRouteImport.update({
+  id: '/power-energy',
+  path: '/power-energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PetroleumNaturalGasRoute = PetroleumNaturalGasRouteImport.update({
+  id: '/petroleum-natural-gas',
+  path: '/petroleum-natural-gas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeadershipRoute = LeadershipRouteImport.update({
@@ -94,6 +106,8 @@ export interface FileRoutesByFullPath {
   '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -108,6 +122,8 @@ export interface FileRoutesByTo {
   '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -123,6 +139,8 @@ export interface FileRoutesById {
   '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
 }
@@ -139,6 +157,8 @@ export interface FileRouteTypes {
     | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +173,8 @@ export interface FileRouteTypes {
     | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
     | '/sitemap.xml'
     | '/solutions'
   id:
@@ -167,6 +189,8 @@ export interface FileRouteTypes {
     | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
     | '/sitemap.xml'
     | '/solutions'
   fileRoutesById: FileRoutesById
@@ -182,6 +206,8 @@ export interface RootRouteChildren {
   HealthcareRoute: typeof HealthcareRoute
   IndustriesRoute: typeof IndustriesRoute
   LeadershipRoute: typeof LeadershipRoute
+  PetroleumNaturalGasRoute: typeof PetroleumNaturalGasRoute
+  PowerEnergyRoute: typeof PowerEnergyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
 }
@@ -200,6 +226,20 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/power-energy': {
+      id: '/power-energy'
+      path: '/power-energy'
+      fullPath: '/power-energy'
+      preLoaderRoute: typeof PowerEnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/petroleum-natural-gas': {
+      id: '/petroleum-natural-gas'
+      path: '/petroleum-natural-gas'
+      fullPath: '/petroleum-natural-gas'
+      preLoaderRoute: typeof PetroleumNaturalGasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leadership': {
@@ -286,6 +326,8 @@ const rootRouteChildren: RootRouteChildren = {
   HealthcareRoute: HealthcareRoute,
   IndustriesRoute: IndustriesRoute,
   LeadershipRoute: LeadershipRoute,
+  PetroleumNaturalGasRoute: PetroleumNaturalGasRoute,
+  PowerEnergyRoute: PowerEnergyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
 }
