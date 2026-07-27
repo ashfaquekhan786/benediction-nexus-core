@@ -3,6 +3,7 @@ import { ShieldCheck, HeartPulse, Satellite, Sparkles, Download } from "lucide-r
 import { SectionHeading } from "@/components/SectionHeading";
 import surfaceScoutPdf from "@/assets/liveeo/surfacescout.pdf.asset.json";
 import treelinePdf from "@/assets/liveeo/treeline.pdf.asset.json";
+import useCasesPdf from "@/assets/liveeo/usecases.pdf.asset.json";
 
 const liveEoProducts = [
   {
@@ -18,6 +19,16 @@ const liveEoProducts = [
     body: "Satellite-driven vegetation management for transmission corridors — encroachment risk scoring and prioritised trimming plans.",
   },
 ];
+
+const liveEoUseCases = [
+  {
+    name: "Use Cases of LiveEO",
+    href: useCasesPdf.url,
+    file: "LiveEO-Use-Cases.pdf",
+    body: "Real-world deployments of LiveEO earth-observation intelligence across pipelines, grids, rail corridors, and critical infrastructure.",
+  },
+];
+
 
 const offerings = [
   {
@@ -96,6 +107,27 @@ export function OfferingsSection() {
                   ))}
                 </div>
               )}
+
+              {o.title === "Special Projects" && (
+                <div className="mt-6 space-y-3 border-t border-border/70 pt-6">
+                  <p className="eyebrow">Use Cases</p>
+                  {liveEoUseCases.map((p) => (
+                    <a
+                      key={p.name}
+                      href={p.href}
+                      download={p.file}
+                      className="flex items-start gap-3 rounded-xl border border-border bg-surface/50 p-4 backdrop-blur-md transition-colors hover:border-accent/60"
+                    >
+                      <Download className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      <span>
+                        <span className="block font-display text-sm font-semibold">{p.name}</span>
+                        <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">{p.body}</span>
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
             </motion.article>
           ))}
         </div>
