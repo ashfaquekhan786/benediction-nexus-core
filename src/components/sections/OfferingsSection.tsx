@@ -3,6 +3,7 @@ import { ShieldCheck, HeartPulse, Satellite, Sparkles, Download } from "lucide-r
 import { SectionHeading } from "@/components/SectionHeading";
 import surfaceScoutPdf from "@/assets/liveeo/surfacescout.pdf.asset.json";
 import treelinePdf from "@/assets/liveeo/treeline.pdf.asset.json";
+import useCasesPdf from "@/assets/liveeo/usecases.pdf.asset.json";
 
 const liveEoProducts = [
   {
@@ -18,6 +19,16 @@ const liveEoProducts = [
     body: "Satellite-driven vegetation management for transmission corridors — encroachment risk scoring and prioritised trimming plans.",
   },
 ];
+
+const liveEoUseCases = [
+  {
+    name: "Use Cases of LiveEO",
+    href: useCasesPdf.url,
+    file: "LiveEO-Use-Cases.pdf",
+    body: "Real-world deployments of LiveEO earth-observation intelligence across pipelines, grids, rail corridors, and critical infrastructure.",
+  },
+];
+
 
 const offerings = [
   {
