@@ -22,7 +22,7 @@ export function Footer() {
               Protecting enterprises, governments, and critical infrastructure worldwide.
             </p>
             <a
-              href="https://www.linkedin.com/in/sumer-biswas-7a923ba7/"
+              href="https://www.linkedin.com/in/rumeli-biswas-871477286/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-accent hover:text-accent"
