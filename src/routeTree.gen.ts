@@ -9,10 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupplyChainManagementRouteImport } from './routes/supply-chain-management'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RailwaysRouteImport } from './routes/railways'
+import { Route as PowerEnergyRouteImport } from './routes/power-energy'
+import { Route as PetroleumNaturalGasRouteImport } from './routes/petroleum-natural-gas'
+import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as HealthcareRouteImport } from './routes/healthcare'
+import { Route as DefenceHomelandSecurityRouteImport } from './routes/defence-homeland-security'
 import { Route as CybersecurityRouteImport } from './routes/cybersecurity'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConsultingRouteImport } from './routes/consulting'
@@ -20,6 +27,11 @@ import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SupplyChainManagementRoute = SupplyChainManagementRouteImport.update({
+  id: '/supply-chain-management',
+  path: '/supply-chain-management',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
@@ -30,6 +42,26 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RailwaysRoute = RailwaysRouteImport.update({
+  id: '/railways',
+  path: '/railways',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PowerEnergyRoute = PowerEnergyRouteImport.update({
+  id: '/power-energy',
+  path: '/power-energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PetroleumNaturalGasRoute = PetroleumNaturalGasRouteImport.update({
+  id: '/petroleum-natural-gas',
+  path: '/petroleum-natural-gas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManufacturingRoute = ManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeadershipRoute = LeadershipRouteImport.update({
   id: '/leadership',
   path: '/leadership',
@@ -38,6 +70,16 @@ const LeadershipRoute = LeadershipRouteImport.update({
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthcareRoute = HealthcareRouteImport.update({
+  id: '/healthcare',
+  path: '/healthcare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DefenceHomelandSecurityRoute = DefenceHomelandSecurityRouteImport.update({
+  id: '/defence-homeland-security',
+  path: '/defence-homeland-security',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CybersecurityRoute = CybersecurityRouteImport.update({
@@ -78,10 +120,17 @@ export interface FileRoutesByFullPath {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/manufacturing': typeof ManufacturingRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
+  '/railways': typeof RailwaysRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/supply-chain-management': typeof SupplyChainManagementRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -90,10 +139,17 @@ export interface FileRoutesByTo {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/manufacturing': typeof ManufacturingRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
+  '/railways': typeof RailwaysRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/supply-chain-management': typeof SupplyChainManagementRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -103,10 +159,17 @@ export interface FileRoutesById {
   '/consulting': typeof ConsultingRoute
   '/contact': typeof ContactRoute
   '/cybersecurity': typeof CybersecurityRoute
+  '/defence-homeland-security': typeof DefenceHomelandSecurityRoute
+  '/healthcare': typeof HealthcareRoute
   '/industries': typeof IndustriesRoute
   '/leadership': typeof LeadershipRoute
+  '/manufacturing': typeof ManufacturingRoute
+  '/petroleum-natural-gas': typeof PetroleumNaturalGasRoute
+  '/power-energy': typeof PowerEnergyRoute
+  '/railways': typeof RailwaysRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
+  '/supply-chain-management': typeof SupplyChainManagementRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -117,10 +180,17 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/manufacturing'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
+    | '/railways'
     | '/sitemap.xml'
     | '/solutions'
+    | '/supply-chain-management'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -129,10 +199,17 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/manufacturing'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
+    | '/railways'
     | '/sitemap.xml'
     | '/solutions'
+    | '/supply-chain-management'
   id:
     | '__root__'
     | '/'
@@ -141,10 +218,17 @@ export interface FileRouteTypes {
     | '/consulting'
     | '/contact'
     | '/cybersecurity'
+    | '/defence-homeland-security'
+    | '/healthcare'
     | '/industries'
     | '/leadership'
+    | '/manufacturing'
+    | '/petroleum-natural-gas'
+    | '/power-energy'
+    | '/railways'
     | '/sitemap.xml'
     | '/solutions'
+    | '/supply-chain-management'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -154,14 +238,28 @@ export interface RootRouteChildren {
   ConsultingRoute: typeof ConsultingRoute
   ContactRoute: typeof ContactRoute
   CybersecurityRoute: typeof CybersecurityRoute
+  DefenceHomelandSecurityRoute: typeof DefenceHomelandSecurityRoute
+  HealthcareRoute: typeof HealthcareRoute
   IndustriesRoute: typeof IndustriesRoute
   LeadershipRoute: typeof LeadershipRoute
+  ManufacturingRoute: typeof ManufacturingRoute
+  PetroleumNaturalGasRoute: typeof PetroleumNaturalGasRoute
+  PowerEnergyRoute: typeof PowerEnergyRoute
+  RailwaysRoute: typeof RailwaysRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
+  SupplyChainManagementRoute: typeof SupplyChainManagementRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/supply-chain-management': {
+      id: '/supply-chain-management'
+      path: '/supply-chain-management'
+      fullPath: '/supply-chain-management'
+      preLoaderRoute: typeof SupplyChainManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
@@ -176,6 +274,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/railways': {
+      id: '/railways'
+      path: '/railways'
+      fullPath: '/railways'
+      preLoaderRoute: typeof RailwaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/power-energy': {
+      id: '/power-energy'
+      path: '/power-energy'
+      fullPath: '/power-energy'
+      preLoaderRoute: typeof PowerEnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/petroleum-natural-gas': {
+      id: '/petroleum-natural-gas'
+      path: '/petroleum-natural-gas'
+      fullPath: '/petroleum-natural-gas'
+      preLoaderRoute: typeof PetroleumNaturalGasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manufacturing': {
+      id: '/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/manufacturing'
+      preLoaderRoute: typeof ManufacturingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leadership': {
       id: '/leadership'
       path: '/leadership'
@@ -188,6 +314,20 @@ declare module '@tanstack/react-router' {
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/healthcare': {
+      id: '/healthcare'
+      path: '/healthcare'
+      fullPath: '/healthcare'
+      preLoaderRoute: typeof HealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/defence-homeland-security': {
+      id: '/defence-homeland-security'
+      path: '/defence-homeland-security'
+      fullPath: '/defence-homeland-security'
+      preLoaderRoute: typeof DefenceHomelandSecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cybersecurity': {
@@ -242,10 +382,17 @@ const rootRouteChildren: RootRouteChildren = {
   ConsultingRoute: ConsultingRoute,
   ContactRoute: ContactRoute,
   CybersecurityRoute: CybersecurityRoute,
+  DefenceHomelandSecurityRoute: DefenceHomelandSecurityRoute,
+  HealthcareRoute: HealthcareRoute,
   IndustriesRoute: IndustriesRoute,
   LeadershipRoute: LeadershipRoute,
+  ManufacturingRoute: ManufacturingRoute,
+  PetroleumNaturalGasRoute: PetroleumNaturalGasRoute,
+  PowerEnergyRoute: PowerEnergyRoute,
+  RailwaysRoute: RailwaysRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
+  SupplyChainManagementRoute: SupplyChainManagementRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
